@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const Home = () => {
+export const Inbox = () => {
     return (
         <div className='row'>
             <div className='col-md-12'>
