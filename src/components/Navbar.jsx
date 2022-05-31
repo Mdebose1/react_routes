@@ -1,7 +1,7 @@
 import React from 'react'
 import{ Link } from "react-router-dom"
 
-export const Messaging  = () => {
+export const Navbar  = () => {
     return (
 <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
     <Link className="navbar-brand" to="#">Navbar</Link>
@@ -22,7 +22,14 @@ export const Messaging  = () => {
             </li>
             
         </ul>
-        
+        <ul className="navbar-nav mr-auto">
+            <li className="nav-item">
+                <Link className="nav-link" to="/signin">Sign In</Link>
+            </li>
+            <li className="nav-item">
+                <Link className="nav-link" to="/logout">Logout</Link>
+            </li>
+        </ul>
     </div>
 </nav>
 )

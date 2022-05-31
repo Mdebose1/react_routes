@@ -1,0 +1,41 @@
+export const App = () => {
+
+  const { currentUser } = useAuth();
+  return (
+    <>
+      <header>
+        <Navbar />
+      </header>
+
+      <main className='container mt-4'>
+        <Routes>
+          {
+            !currentUser.loggedIn ?
+              (
+                <>
+                  <Route exact path='/users/signin' element={ <SignIn /> } />
+                  <Route path='*' element={ <Unauthorized /> } />
+                </>
+              ) :
+              (
+                <>
+                  <Route exact path='/' element={ <Home /> } />
+                  <Route exact path='/users/explore' element={ <Explore /> } />
+                  <Route exact path='/users/profile' element={ <Profile /> } />
+                  <Route exact path='/shop' element={ <Shop /> } />
+                  <Route exact path='/shop/cart' element={ <ShopCart /> } />
+                </>
+
+              )
+          }
+          <Route exact path='/contact' element={ <Contact /> } />
+        </Routes>
+       
+      </main>
+
+      <footer>
+
+      </footer>
+    </>
+  );
+};
